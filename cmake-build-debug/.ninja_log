@@ -1,0 +1,20 @@
+# ninja log v5
+1	375	1696362891435582715	build.ninja	4652ab91d145de5d
+0	1171	1696362864951249622	CMakeFiles/BrowserEngineInternals.dir/main.cpp.o	530df7ed85b2c330
+1175	1291	1696362865074084699	BrowserEngineInternals	3a31aaa9a0dee42
+2	1939	1696362925023469917	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o	97679b1df0641d21
+0	2027	1696362925112302481	CMakeFiles/test_.dir/Test123.cpp.o	5e60ef2623894937
+1	5106	1696362928176151588	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o	d0cf8e2039ffc36d
+5107	5367	1696362928463826000	lib/libgtest.a	21fa1f62a564646f
+5367	5418	1696362928514793000	lib/libgtest_main.a	1a22b72292c1559
+5418	5731	1696362928826242139	test_	d3dfa47cfc7bd8f1
+5418	5731	1696362928826242139	test_[1]_tests.cmake	d3dfa47cfc7bd8f1
+5418	5731	1696362928826242139	/Users/dustin/Desktop/Programming/C++ Programming/BrowserEngineInternals/cmake-build-debug/test_[1]_tests.cmake	d3dfa47cfc7bd8f1
+9	1736	1696362937850496109	CMakeFiles/test_.dir/Test123.cpp.o	5e60ef2623894937
+10	2021	1696362938138286017	_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o	52c4e67fef0e7b61
+1736	2148	1696362938277229578	test_	d3dfa47cfc7bd8f1
+1736	2148	1696362938277229578	test_[1]_tests.cmake	d3dfa47cfc7bd8f1
+1736	2148	1696362938277229578	/Users/dustin/Desktop/Programming/C++ Programming/BrowserEngineInternals/cmake-build-debug/test_[1]_tests.cmake	d3dfa47cfc7bd8f1
+10	3107	1696362939220526723	_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o	d8c8dd6a4396ee54
+3107	3197	1696362939327626000	lib/libgmock.a	93400e096a72137f
+3197	3259	1696362939389339000	lib/libgmock_main.a	3531db8b0538cc87

@@ -1,0 +1,5 @@
+if(EXISTS "/Users/dustin/Desktop/Programming/C++ Programming/BrowserEngineInternals/cmake-build-debug/test_[1]_tests.cmake")
+  include("/Users/dustin/Desktop/Programming/C++ Programming/BrowserEngineInternals/cmake-build-debug/test_[1]_tests.cmake")
+else()
+  add_test(test__NOT_BUILT test__NOT_BUILT)
+endif()
