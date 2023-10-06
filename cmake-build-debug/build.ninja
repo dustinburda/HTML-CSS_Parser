@@ -55,6 +55,18 @@ build CMakeFiles/BrowserEngineInternals.dir/main.cpp.o: CXX_COMPILER__BrowserEng
   OBJECT_DIR = CMakeFiles/BrowserEngineInternals.dir
   OBJECT_FILE_DIR = CMakeFiles/BrowserEngineInternals.dir
 
+build CMakeFiles/BrowserEngineInternals.dir/Dom.cpp.o: CXX_COMPILER__BrowserEngineInternals_unscanned_Debug /Users/dustin/Desktop/Programming/C++$ Programming/BrowserEngineInternals/Dom.cpp || cmake_object_order_depends_target_BrowserEngineInternals
+  DEP_FILE = CMakeFiles/BrowserEngineInternals.dir/Dom.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/BrowserEngineInternals.dir
+  OBJECT_FILE_DIR = CMakeFiles/BrowserEngineInternals.dir
+
+build CMakeFiles/BrowserEngineInternals.dir/HTMLParser.cpp.o: CXX_COMPILER__BrowserEngineInternals_unscanned_Debug /Users/dustin/Desktop/Programming/C++$ Programming/BrowserEngineInternals/HTMLParser.cpp || cmake_object_order_depends_target_BrowserEngineInternals
+  DEP_FILE = CMakeFiles/BrowserEngineInternals.dir/HTMLParser.cpp.o.d
+  FLAGS = -g -std=gnu++17 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/BrowserEngineInternals.dir
+  OBJECT_FILE_DIR = CMakeFiles/BrowserEngineInternals.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target BrowserEngineInternals
@@ -63,7 +75,7 @@ build CMakeFiles/BrowserEngineInternals.dir/main.cpp.o: CXX_COMPILER__BrowserEng
 #############################################
 # Link the executable BrowserEngineInternals
 
-build BrowserEngineInternals: CXX_EXECUTABLE_LINKER__BrowserEngineInternals_Debug CMakeFiles/BrowserEngineInternals.dir/main.cpp.o
+build BrowserEngineInternals: CXX_EXECUTABLE_LINKER__BrowserEngineInternals_Debug CMakeFiles/BrowserEngineInternals.dir/main.cpp.o CMakeFiles/BrowserEngineInternals.dir/Dom.cpp.o CMakeFiles/BrowserEngineInternals.dir/HTMLParser.cpp.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/BrowserEngineInternals.dir
   POST_BUILD = :

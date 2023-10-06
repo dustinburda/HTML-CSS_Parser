@@ -7,6 +7,8 @@
 
 #include <vector>
 #include <string>
+#include <memory>
+
 
 namespace Dom {
     class Node;
@@ -26,12 +28,13 @@ namespace Dom {
 
 
     class Node {
-        Node(std::string& text) :children{}, node_type {Node_T::Text} {
-            node_data = text;
+    public:
+        explicit Node(std::string text) :children{}, node_type {Node_T::Text} {
+            node_data = std::move(text);
         }
 
-        Node(std::string& name, AttrMap& attr_map, std::vector<node_ptr>& children) : children{std::move(children)}, node_type{Node_T::Element} {
-            node_data = ElementData {name, std::move(attr_map)};
+        Node(std::string name, const AttrMap& attr_map, const std::vector<node_ptr>& children) : children{std::move(children)}, node_type{Node_T::Element} {
+            node_data = ElementData {std::move(name), std::move(attr_map)};
         }
 
     private:
