@@ -15,7 +15,10 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-add_executable(BrowserEngineInternals main.cpp)
+add_executable(BrowserEngineInternals
+        main.cpp
+        Dom.cpp
+        HTMLParser.cpp)
 
 enable_testing()
 
