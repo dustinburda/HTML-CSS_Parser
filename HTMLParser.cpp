@@ -4,40 +4,49 @@
 
 #include "HTMLParser.h"
 
-char HTMLParser::peek() const {
-    return source[pos];
+std::optional<char> HTMLParser::peek() const {
+    if(eof())
+        return std::nullopt;
+    return source_[pos_];
 }
 
 bool HTMLParser::starts_with(const std::string& s) const {
-    size_t current_pos = pos;
-    size_t s_pos = 0;
+    if(s.size() > source_.size() - pos_)
+        return false;
 
-    while(current_pos < source.size() && s_pos < s.size() && source[current_pos] == s[s_pos]) {
-        if(source[current_pos] != s[s_pos])
-            return false;
+    //size_t current_pos = pos_;
+    // size_t s_pos = 0;
 
-        current_pos++;
-        s_pos++;
-    }
+    std::string_view src_view { source_ };
+    return src_view.substr(pos_, s.size()) == s;
+//    while(current_pos < source_.size() && s_pos < s.size() && source_[current_pos] == s[s_pos]) {
+//        if(source_[current_pos] != s[s_pos])
+//            return false;
+//
+//        current_pos++;
+//        s_pos++;
+//    }
 
-    return true;
+//     return true;
 }
 
 bool HTMLParser::eof() const{
-    return pos >= source.size();
+    return pos_ >= source_.size();
 }
 
-char HTMLParser::advance() {
-    char ret = source[pos];
-    pos++;
+std::optional<char> HTMLParser::advance() {
+    if(eof())
+        return std::nullopt;
+    char ret = source_[pos_];
+    pos_++;
     return ret;
 }
 
-std::string HTMLParser::advance_while(std::function<bool(char)>& test) {
+std::string HTMLParser::advance_while(std::function<bool(char)>& pred) {
     std::string result { "" };
 
-    while(!eof() && test(peek())) {
-        result.push_back(advance());
+    while(!eof() && pred(peek().value())) {
+        result.push_back(advance().value());
     }
 
     return result;
@@ -56,7 +65,7 @@ std::string HTMLParser::parse_tag_name() {
 }
 
 Dom::node_ptr HTMLParser::parse_node() {
-    switch(advance()) {
+    switch(peek().value()) {
         case '<':
             return parse_element();
         default:

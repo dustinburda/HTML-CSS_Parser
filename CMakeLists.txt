@@ -23,7 +23,10 @@ add_executable(BrowserEngineInternals
 enable_testing()
 
 add_executable(test_
-        DomTest.cpp)
+        Dom.cpp
+        DomTest.cpp
+        HTMLParser.cpp
+        HTMLParserTest.cpp)
 
 target_link_libraries(test_
         GTest::gtest_main)
