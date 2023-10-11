@@ -1,16 +1,96 @@
 # ninja log v5
-1175	1291	1696362865074084699	BrowserEngineInternals	3a31aaa9a0dee42
-2	1939	1696362925023469917	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o	97679b1df0641d21
+12	510	1696985828371253188	build.ninja	4652ab91d145de5d
 1	5106	1696362928176151588	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o	d0cf8e2039ffc36d
-1	375	1696608829224982568	build.ninja	4652ab91d145de5d
+2359	2524	1696988737401822775	BrowserEngineInternals	2c397c22455fc400
+2	1939	1696362925023469917	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o	97679b1df0641d21
+10	2826	1696988737701288433	CMakeFiles/test_.dir/DomTest.cpp.o	ea5fa157a48d90cc
 5107	5367	1696362928463826000	lib/libgtest.a	21fa1f62a564646f
+2826	3248	1696988738138654675	test_[1]_tests.cmake	459533a748c7d12
+2826	3248	1696988738138654675	/Users/dustin/Desktop/Programming/C++ Programming/BrowserEngineInternals/cmake-build-debug/test_[1]_tests.cmake	459533a748c7d12
+0	1171	1696362864951249622	CMakeFiles/BrowserEngineInternals.dir/main.cpp.o	530df7ed85b2c330
 5367	5418	1696362928514793000	lib/libgtest_main.a	1a22b72292c1559
 9	1736	1696362937850496109	CMakeFiles/test_.dir/Test123.cpp.o	5e60ef2623894937
-1736	2148	1696362938277229578	test_[1]_tests.cmake	d3dfa47cfc7bd8f1
-1736	2148	1696362938277229578	/Users/dustin/Desktop/Programming/C++ Programming/BrowserEngineInternals/cmake-build-debug/test_[1]_tests.cmake	d3dfa47cfc7bd8f1
-0	1171	1696362864951249622	CMakeFiles/BrowserEngineInternals.dir/main.cpp.o	530df7ed85b2c330
-1736	2148	1696362938277229578	test_	d3dfa47cfc7bd8f1
-3107	3197	1696362939327626000	lib/libgmock.a	93400e096a72137f
+10	2359	1696988737232826498	CMakeFiles/BrowserEngineInternals.dir/HTMLParser.cpp.o	2abc2b4331a8df6d
 10	2021	1696362938138286017	_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o	52c4e67fef0e7b61
+9	1515	1696988736392542373	CMakeFiles/BrowserEngineInternals.dir/Dom.cpp.o	a5ec72f023e237cc
+2826	3248	1696988738138654675	test_	459533a748c7d12
+3107	3197	1696362939327626000	lib/libgmock.a	93400e096a72137f
 10	3107	1696362939220526723	_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o	d8c8dd6a4396ee54
 3197	3259	1696362939389339000	lib/libgmock_main.a	3531db8b0538cc87
+11	1122	1696988755550684182	CMakeFiles/BrowserEngineInternals.dir/Dom.cpp.o	a5ec72f023e237cc
+12	1729	1696988756156883303	CMakeFiles/BrowserEngineInternals.dir/HTMLParser.cpp.o	2abc2b4331a8df6d
+1730	1869	1696988756301586890	BrowserEngineInternals	2c397c22455fc400
+13	2115	1696988756545790455	CMakeFiles/test_.dir/DomTest.cpp.o	ea5fa157a48d90cc
+2115	2457	1696988756895165722	test_	459533a748c7d12
+2115	2457	1696988756895165722	test_[1]_tests.cmake	459533a748c7d12
+2115	2457	1696988756895165722	/Users/dustin/Desktop/Programming/C++ Programming/BrowserEngineInternals/cmake-build-debug/test_[1]_tests.cmake	459533a748c7d12
+10	1795	1696988766519844807	CMakeFiles/BrowserEngineInternals.dir/Dom.cpp.o	a5ec72f023e237cc
+11	2509	1696988767229676957	CMakeFiles/BrowserEngineInternals.dir/HTMLParser.cpp.o	2abc2b4331a8df6d
+2510	2662	1696988767388494111	BrowserEngineInternals	2c397c22455fc400
+11	2965	1696988767689270070	CMakeFiles/test_.dir/DomTest.cpp.o	ea5fa157a48d90cc
+2965	3392	1696988768127482665	test_	459533a748c7d12
+2965	3392	1696988768127482665	test_[1]_tests.cmake	459533a748c7d12
+2965	3392	1696988768127482665	/Users/dustin/Desktop/Programming/C++ Programming/BrowserEngineInternals/cmake-build-debug/test_[1]_tests.cmake	459533a748c7d12
+7	1064	1696988813101842618	CMakeFiles/BrowserEngineInternals.dir/Dom.cpp.o	a5ec72f023e237cc
+7	1669	1696988813702933564	CMakeFiles/BrowserEngineInternals.dir/HTMLParser.cpp.o	2abc2b4331a8df6d
+1669	1801	1696988813837673345	BrowserEngineInternals	2c397c22455fc400
+8	2066	1696988814101639391	CMakeFiles/test_.dir/DomTest.cpp.o	ea5fa157a48d90cc
+2067	2417	1696988814464931914	test_	459533a748c7d12
+2067	2417	1696988814464931914	test_[1]_tests.cmake	459533a748c7d12
+2067	2417	1696988814464931914	/Users/dustin/Desktop/Programming/C++ Programming/BrowserEngineInternals/cmake-build-debug/test_[1]_tests.cmake	459533a748c7d12
+7	1342	1696988878261620955	CMakeFiles/BrowserEngineInternals.dir/Dom.cpp.o	a5ec72f023e237cc
+7	2042	1696988878958123584	CMakeFiles/BrowserEngineInternals.dir/HTMLParser.cpp.o	2abc2b4331a8df6d
+2042	2177	1696988879094482956	BrowserEngineInternals	2c397c22455fc400
+7	2391	1696988879310205778	CMakeFiles/test_.dir/DomTest.cpp.o	ea5fa157a48d90cc
+2391	2726	1696988879657101552	test_	459533a748c7d12
+2391	2726	1696988879657101552	test_[1]_tests.cmake	459533a748c7d12
+2391	2726	1696988879657101552	/Users/dustin/Desktop/Programming/C++ Programming/BrowserEngineInternals/cmake-build-debug/test_[1]_tests.cmake	459533a748c7d12
+7	1117	1696988898231737406	CMakeFiles/BrowserEngineInternals.dir/Dom.cpp.o	a5ec72f023e237cc
+8	1657	1696988898769964760	CMakeFiles/BrowserEngineInternals.dir/HTMLParser.cpp.o	2abc2b4331a8df6d
+1657	1766	1696988898878077378	BrowserEngineInternals	2c397c22455fc400
+8	2000	1696988899110955072	CMakeFiles/test_.dir/DomTest.cpp.o	ea5fa157a48d90cc
+2000	2284	1696988899409405236	test_	459533a748c7d12
+2000	2284	1696988899409405236	test_[1]_tests.cmake	459533a748c7d12
+2000	2284	1696988899409405236	/Users/dustin/Desktop/Programming/C++ Programming/BrowserEngineInternals/cmake-build-debug/test_[1]_tests.cmake	459533a748c7d12
+7	975	1696989092425431173	CMakeFiles/BrowserEngineInternals.dir/Dom.cpp.o	a5ec72f023e237cc
+8	1499	1696989092948209008	CMakeFiles/BrowserEngineInternals.dir/HTMLParser.cpp.o	2abc2b4331a8df6d
+1499	1592	1696989093044646296	BrowserEngineInternals	2c397c22455fc400
+8	1780	1696989093229847120	CMakeFiles/test_.dir/DomTest.cpp.o	ea5fa157a48d90cc
+1780	2090	1696989093549735254	test_	459533a748c7d12
+1780	2090	1696989093549735254	test_[1]_tests.cmake	459533a748c7d12
+1780	2090	1696989093549735254	/Users/dustin/Desktop/Programming/C++ Programming/BrowserEngineInternals/cmake-build-debug/test_[1]_tests.cmake	459533a748c7d12
+9	1094	1696989110637178894	CMakeFiles/BrowserEngineInternals.dir/Dom.cpp.o	a5ec72f023e237cc
+9	1663	1696989111206361818	CMakeFiles/BrowserEngineInternals.dir/HTMLParser.cpp.o	2abc2b4331a8df6d
+1664	1773	1696989111318474556	BrowserEngineInternals	2c397c22455fc400
+9	1963	1696989111507129688	CMakeFiles/test_.dir/DomTest.cpp.o	ea5fa157a48d90cc
+1963	2259	1696989111812307772	test_	459533a748c7d12
+1963	2259	1696989111812307772	test_[1]_tests.cmake	459533a748c7d12
+1963	2259	1696989111812307772	/Users/dustin/Desktop/Programming/C++ Programming/BrowserEngineInternals/cmake-build-debug/test_[1]_tests.cmake	459533a748c7d12
+7	1133	1696989165391790475	CMakeFiles/BrowserEngineInternals.dir/Dom.cpp.o	a5ec72f023e237cc
+8	1732	1696989165985497808	CMakeFiles/BrowserEngineInternals.dir/HTMLParser.cpp.o	2abc2b4331a8df6d
+1732	1846	1696989166103811796	BrowserEngineInternals	2c397c22455fc400
+8	2005	1696989166257562964	CMakeFiles/test_.dir/DomTest.cpp.o	ea5fa157a48d90cc
+2005	2294	1696989166563836410	test_	459533a748c7d12
+2005	2294	1696989166563836410	test_[1]_tests.cmake	459533a748c7d12
+2005	2294	1696989166563836410	/Users/dustin/Desktop/Programming/C++ Programming/BrowserEngineInternals/cmake-build-debug/test_[1]_tests.cmake	459533a748c7d12
+8	1188	1696989185526814186	CMakeFiles/BrowserEngineInternals.dir/Dom.cpp.o	a5ec72f023e237cc
+9	1735	1696989186075003191	CMakeFiles/BrowserEngineInternals.dir/HTMLParser.cpp.o	2abc2b4331a8df6d
+1735	1841	1696989186181768093	BrowserEngineInternals	2c397c22455fc400
+9	2053	1696989186393785229	CMakeFiles/test_.dir/DomTest.cpp.o	ea5fa157a48d90cc
+2054	2344	1696989186693262083	test_	459533a748c7d12
+2054	2344	1696989186693262083	test_[1]_tests.cmake	459533a748c7d12
+2054	2344	1696989186693262083	/Users/dustin/Desktop/Programming/C++ Programming/BrowserEngineInternals/cmake-build-debug/test_[1]_tests.cmake	459533a748c7d12
+7	917	1696989232909757886	CMakeFiles/BrowserEngineInternals.dir/Dom.cpp.o	a5ec72f023e237cc
+8	1427	1696989233417813184	CMakeFiles/BrowserEngineInternals.dir/HTMLParser.cpp.o	2abc2b4331a8df6d
+1427	1543	1696989233530131395	BrowserEngineInternals	2c397c22455fc400
+8	1749	1696989233740019381	CMakeFiles/test_.dir/DomTest.cpp.o	ea5fa157a48d90cc
+1749	2057	1696989234056520740	test_	459533a748c7d12
+1749	2057	1696989234056520740	test_[1]_tests.cmake	459533a748c7d12
+1749	2057	1696989234056520740	/Users/dustin/Desktop/Programming/C++ Programming/BrowserEngineInternals/cmake-build-debug/test_[1]_tests.cmake	459533a748c7d12
+8	1122	1696989295082665839	CMakeFiles/BrowserEngineInternals.dir/Dom.cpp.o	a5ec72f023e237cc
+9	1693	1696989295648566287	CMakeFiles/BrowserEngineInternals.dir/HTMLParser.cpp.o	2abc2b4331a8df6d
+1693	1812	1696989295776103687	BrowserEngineInternals	2c397c22455fc400
+9	2046	1696989296008712199	CMakeFiles/test_.dir/DomTest.cpp.o	ea5fa157a48d90cc
+2046	2375	1696989296347523059	test_	459533a748c7d12
+2046	2375	1696989296347523059	test_[1]_tests.cmake	459533a748c7d12
+2046	2375	1696989296347523059	/Users/dustin/Desktop/Programming/C++ Programming/BrowserEngineInternals/cmake-build-debug/test_[1]_tests.cmake	459533a748c7d12
