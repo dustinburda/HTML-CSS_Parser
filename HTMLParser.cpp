@@ -53,7 +53,7 @@ std::string HTMLParser::advance_while(std::function<bool(char)>& pred) {
 }
 
 void HTMLParser::advance_whitespace() {
-    while(!eof() && (peek() == ' ' || peek() == '\t'))
+    while(!eof() && (peek() == ' ' || peek() == '\t' || peek() == '\n'))
         advance();
 }
 
@@ -85,31 +85,27 @@ Dom::node_ptr HTMLParser::parse_text() {
 }
 
 Dom::node_ptr HTMLParser::parse_element() {
+
+    advance(); //opening tag
+
     auto tag_name = parse_tag_name();
     auto attributes = parse_attributes();
+
+    advance(); //closing tag
+
     auto children = parse_nodes();
+
+    advance(); //opening tag
+    advance(); // '/'
+    auto closing_tag_name = parse_tag_name();
+    assert(closing_tag_name == tag_name);
+    advance(); //closing tag
 
     std::shared_ptr<Dom::Node> n_ptr = std::make_shared<Dom::Node>(tag_name, attributes, children);
 
     return n_ptr;
 }
 
-ss_pair HTMLParser::parse_attr() {
-    return {parse_tag_name(), parse_attr_value()};
-}
-
-
-std::string HTMLParser::parse_attr_value() {
-    auto open_quote = advance();
-
-    std::function<bool(char)> not_open_quote = [&open_quote](char elem) -> bool {
-        return elem != open_quote;
-    };
-
-    auto value = advance_while(not_open_quote);
-
-    return value;
-}
 
 Dom::AttrMap HTMLParser::parse_attributes() {
     Dom::AttrMap attr_map{};
@@ -126,6 +122,25 @@ Dom::AttrMap HTMLParser::parse_attributes() {
     return attr_map;
 }
 
+ss_pair HTMLParser::parse_attr() {
+    auto attr_name = parse_tag_name();
+    advance(); // '='
+    auto attr_val = parse_attr_value();
+    return {attr_name, attr_val};
+}
+
+std::string HTMLParser::parse_attr_value() {
+    auto open_quote = advance();
+
+    std::function<bool(char)> not_open_quote = [&open_quote](char elem) -> bool {
+        return elem != open_quote;
+    };
+
+    auto value = advance_while(not_open_quote);
+    advance(); //open quote
+    return value;
+}
+
 std::vector<Dom::node_ptr> HTMLParser::parse_nodes() {
     std::vector<Dom::node_ptr> nodes {};
     while(true) {
@@ -140,7 +155,7 @@ std::vector<Dom::node_ptr> HTMLParser::parse_nodes() {
     return nodes;
 }
 
-Dom::node_ptr HTMLParser::parse(std::string& source) {
+Dom::node_ptr HTMLParser::parse() {
     auto nodes = parse_nodes();
 
     if(nodes.size() == 1) {

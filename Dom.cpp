@@ -72,6 +72,36 @@ void Node::show(int level) const {
 }
 
 void Node::show(int level, std::ostringstream& s) const{
+//    if(level != 0)
+//        s << "\n";
+//
+//    std::string indent {""};
+//    indent.resize(level);
+//    std::fill(indent.begin(), indent.end(), '  ');
+//
+//    switch (node_type) {
+//        case Node_T::Text:
+//            s << indent << std::get<std::string>(node_data);
+//            break;
+//        case Node_T::Element:
+//            auto& element_data = std::get<ElementData>(node_data);
+//            s << indent << "<" << element_data.tag_name;
+//            for(const auto& [attr, value] : element_data.attributes) {
+//                s << " " << attr << "=" << "\"" << value << "\"";
+//            }
+//            s << ">";
+//            break;
+//    }
+//
+//    for(const auto& child : children) {
+//        child->show(level + 2);
+//    }
+//
+//    if(node_type == Node_T::Element) {
+//        auto& element_data = std::get<ElementData>(node_data);
+//        s << "\n" << indent << "</" << element_data.tag_name << ">";
+//    }
+
     if(level != 0)
         s << "\n";
 
@@ -94,7 +124,7 @@ void Node::show(int level, std::ostringstream& s) const{
     }
 
     for(const auto& child : children) {
-        child->show(level + 2);
+        child->show(level + 2, s);
     }
 
     if(node_type == Node_T::Element) {

@@ -16,7 +16,7 @@ class HTMLParser {
 public:
     explicit HTMLParser(std::string src) : pos_{0}, source_{std::move(src)} {}
 
-    Dom::node_ptr parse(std::string& source);
+    Dom::node_ptr parse();
 
 
     std::optional<char> peek() const;
@@ -24,20 +24,20 @@ public:
     bool eof() const;
 
     std::optional<char> advance();
-    std::string advance_while(std::function<bool(char)>& test); // TODO test
-    void advance_whitespace(); // TODO test
+    std::string advance_while(std::function<bool(char)>& test);
+    void advance_whitespace();
 
 
-    std::string parse_tag_name(); // TODO test
-    Dom::node_ptr parse_node(); // TODO test
+    std::string parse_tag_name();
+    Dom::node_ptr parse_node(); //
     Dom::node_ptr parse_text();
-    Dom::node_ptr parse_element();
+    Dom::node_ptr parse_element(); // TODO test
 
-    ss_pair parse_attr();
-    std::string parse_attr_value();
-    Dom::AttrMap parse_attributes();
+    ss_pair parse_attr(); // TODO test
+    std::string parse_attr_value(); // TODO test
+    Dom::AttrMap parse_attributes(); // TODO test
 
-    std::vector<Dom::node_ptr> parse_nodes();
+    std::vector<Dom::node_ptr> parse_nodes(); // TODO test
 
 private:
     std::string source_;
