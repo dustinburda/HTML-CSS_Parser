@@ -53,7 +53,7 @@ std::string HTMLParser::advance_while(std::function<bool(char)>& pred) {
 }
 
 void HTMLParser::advance_whitespace() {
-    while(!eof() && peek() == ' ')
+    while(!eof() && (peek() == ' ' || peek() == '\t'))
         advance();
 }
 
