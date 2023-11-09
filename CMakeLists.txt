@@ -18,7 +18,9 @@ FetchContent_MakeAvailable(googletest)
 add_executable(BrowserEngineInternals
         main.cpp
         Dom.cpp
-        HTMLParser.cpp)
+        HTMLParser.cpp
+        CSSParser.cpp
+        CSS.cpp)
 
 enable_testing()
 
@@ -26,7 +28,11 @@ add_executable(test_
         Dom.cpp
         DomTest.cpp
         HTMLParser.cpp
-        HTMLParserTest.cpp)
+        HTMLParserTest.cpp
+        CSSParser.cpp
+        CSSParserTest.cpp
+        CSS.cpp
+        CSSTest.cpp)
 
 target_link_libraries(test_
         GTest::gtest_main)

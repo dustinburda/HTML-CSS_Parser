@@ -29,15 +29,15 @@ public:
 
 
     std::string parse_tag_name();
-    Dom::node_ptr parse_node(); //
+    Dom::node_ptr parse_node();
     Dom::node_ptr parse_text();
-    Dom::node_ptr parse_element(); // TODO test
+    Dom::node_ptr parse_element();
 
-    ss_pair parse_attr(); // TODO test
-    std::string parse_attr_value(); // TODO test
-    Dom::AttrMap parse_attributes(); // TODO test
+    ss_pair parse_attr();
+    std::string parse_attr_value();
+    Dom::AttrMap parse_attributes();
 
-    std::vector<Dom::node_ptr> parse_nodes(); // TODO test
+    std::vector<Dom::node_ptr> parse_nodes();
 
 private:
     std::string source_;
