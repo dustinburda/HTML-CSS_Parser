@@ -14,20 +14,8 @@ bool HTMLParser::starts_with(const std::string& s) const {
     if(s.size() > source_.size() - pos_)
         return false;
 
-    //size_t current_pos = pos_;
-    // size_t s_pos = 0;
-
     std::string_view src_view { source_ };
     return src_view.substr(pos_, s.size()) == s;
-//    while(current_pos < source_.size() && s_pos < s.size() && source_[current_pos] == s[s_pos]) {
-//        if(source_[current_pos] != s[s_pos])
-//            return false;
-//
-//        current_pos++;
-//        s_pos++;
-//    }
-
-//     return true;
 }
 
 bool HTMLParser::eof() const{

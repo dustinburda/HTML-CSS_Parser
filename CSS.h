@@ -56,6 +56,17 @@ enum class Value {
 };
 
 struct Declaration {
+    Declaration() = default;
+
+    Declaration(std::string name, std::string value) :
+        name_{std::move(name)}, value_{std::move(value)}, value_type_{Value::Keyword} {}
+
+    Declaration(std::string name, std::tuple<float, Unit> length) :
+        name_{std::move(name)}, value_ {length}, value_type_{Value::Length} {}
+
+    Declaration(std::string name, Color color) :
+        name_{std::move(name)}, value_ {std::move(color)}, value_type_{Value::ColorValue} {}
+
     std::string name_;
     std::variant<std::string, std::tuple<float, Unit>, Color> value_;
     Value value_type_;
