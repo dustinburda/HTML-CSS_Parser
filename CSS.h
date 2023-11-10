@@ -5,71 +5,10 @@
 #ifndef BROWSERENGINEINTERNALS_CSS_H
 #define BROWSERENGINEINTERNALS_CSS_H
 
-
-#include <vector>
-#include <string>
-#include <array>
-#include <tuple>
-#include <variant>
-#include <optional>
-#include <cstdint>
-
-using Specificity = std::tuple<uint8_t, uint8_t, uint8_t>;
-
-enum Selector_Type {
-    SimpleSelector
-    // TODO add more
-};
-
-struct Selector {
-    Selector() : type_{Selector_Type::SimpleSelector}, tag_name_{std::nullopt}, id_{std::nullopt}, class_{} {}
-
-    Selector_Type type_;
-    std::optional<std::string> tag_name_;
-    std::optional<std::string> id_;
-    std::vector<std::string> class_;
-
-    Specificity specificity() const;
-
-    bool operator<(const Selector& other) const {
-        return this->specificity() < other.specificity();
-    }
-};
+#include "Declaration.h"
+#include "Selector.h"
 
 
-using Color = std::array<uint8_t, 4>;
-
-enum class Unit {
-    Pixel
-    // TODO add more
-};
-
-using Value = std::variant<std::string, std::tuple<int, Unit>, Color>;
-
-enum class Value_Type {
-    Keyword, // string
-    Length, // tuple float, Unit
-    ColorValue // Color
-};
-
-struct Declaration {
-    Declaration() = default;
-
-    Declaration(std::string name, std::string value) :
-        name_{std::move(name)}, var_value_{std::move(value)}, value_type_{Value_Type::Keyword} {}
-
-    Declaration(std::string name, std::tuple<int, Unit> length) :
-        name_{std::move(name)}, var_value_ {length}, value_type_{Value_Type::Length} {}
-
-    Declaration(std::string name, Color color) :
-        name_{std::move(name)}, var_value_ {std::move(color)}, value_type_{Value_Type::ColorValue} {}
-
-    std::string name_;
-    Value var_value_;
-    Value_Type value_type_;
-};
-
-int to_px(Declaration& decl) noexcept;
 
 
 struct Rule {

@@ -21,7 +21,9 @@ add_executable(BrowserEngineInternals
         HTMLParser.cpp
         CSSParser.cpp
         CSS.cpp
-        Style.cpp)
+        Style.cpp
+        Declaration.cpp
+        Selector.cpp)
 
 enable_testing()
 
@@ -35,7 +37,9 @@ add_executable(test_
         CSS.cpp
         CSSTest.cpp
         Style.cpp
-        StyleTest.cpp)
+        StyleTest.cpp
+        Declaration.cpp
+        Selector.cpp)
 
 target_link_libraries(test_
         GTest::gtest_main)
