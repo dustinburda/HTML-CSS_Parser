@@ -128,6 +128,7 @@ public:
     }
 
     std::vector<Declaration> parse_declarations() {
+        advance(); // '{'
         std::vector<Declaration> ret;
         while(true) {
             advance_whitespace();
@@ -170,7 +171,7 @@ public:
 
         std::function<bool(char)> num_or_dot = [](char c) {
             return (c >= 0 && c <= 9) || (c == '.');
-        };
+        }; // It actually is a float
         auto length_str = advance_while(num_or_dot);
         float length = std::stof(length_str);
 
@@ -185,9 +186,9 @@ public:
 
     Color parse_color() {
         advance(); // '#'
-        auto r = std::stoi(advance(2).value());
-        auto g = std::stoi(advance(2).value());
-        auto b = std::stoi(advance(2).value());
+        auto r = std::stoi(advance(2).value(), nullptr, 16);
+        auto g = std::stoi(advance(2).value(), nullptr, 16);
+        auto b = std::stoi(advance(2).value(), nullptr, 16);
 
         return Color {static_cast<uint8_t>(r), static_cast<uint8_t>(g), static_cast<uint8_t>(b), 255};
     }
