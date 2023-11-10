@@ -14,7 +14,7 @@
 #include <optional>
 #include <cstdint>
 
-using Specificty = std::tuple<uint8_t, uint8_t, uint8_t>;
+using Specificity = std::tuple<uint8_t, uint8_t, uint8_t>;
 
 enum Selector_Type {
     SimpleSelector
@@ -29,7 +29,7 @@ struct Selector {
     std::optional<std::string> id_;
     std::vector<std::string> class_;
 
-    Specificty specificity() const {
+    Specificity specificity() const {
         auto a = (id_ == std::nullopt) ? 0 : 1;
         auto b = class_.size();
         auto c = (tag_name_ == std::nullopt) ? 0 : 1;
@@ -49,7 +49,9 @@ enum class Unit {
     // TODO add more
 };
 
-enum class Value {
+using Value = std::variant<std::string, std::tuple<int, Unit>, Color>;
+
+enum class Value_Type {
     Keyword, // string
     Length, // tuple float, Unit
     ColorValue // Color
@@ -59,26 +61,26 @@ struct Declaration {
     Declaration() = default;
 
     Declaration(std::string name, std::string value) :
-        name_{std::move(name)}, value_{std::move(value)}, value_type_{Value::Keyword} {}
+        name_{std::move(name)}, var_value_{std::move(value)}, value_type_{Value_Type::Keyword} {}
 
-    Declaration(std::string name, std::tuple<float, Unit> length) :
-        name_{std::move(name)}, value_ {length}, value_type_{Value::Length} {}
+    Declaration(std::string name, std::tuple<int, Unit> length) :
+        name_{std::move(name)}, var_value_ {length}, value_type_{Value_Type::Length} {}
 
     Declaration(std::string name, Color color) :
-        name_{std::move(name)}, value_ {std::move(color)}, value_type_{Value::ColorValue} {}
+        name_{std::move(name)}, var_value_ {std::move(color)}, value_type_{Value_Type::ColorValue} {}
 
     std::string name_;
-    std::variant<std::string, std::tuple<float, Unit>, Color> value_;
-    Value value_type_;
+    Value var_value_;
+    Value_Type value_type_;
 };
 
-static float to_px(Declaration& decl) {
+static int to_px(Declaration& decl) noexcept {
 
-    float length = 0;
+    int length = 0;
     try{
-        auto& value = std::get<std::tuple<float, Unit>>(decl.value_);
+        auto& value = std::get<std::tuple<int, Unit>>(decl.var_value_);
         length = std::get<0>(value);
-    } catch (std::bad_variant_access) {
+    } catch (std::bad_variant_access& e) {
         length = 0;
     }
     return length;

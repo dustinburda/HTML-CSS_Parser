@@ -10,6 +10,7 @@
 #include <memory>
 #include <iostream>
 #include <sstream>
+#include <unordered_set>
 
 
 namespace Dom {
@@ -26,25 +27,23 @@ namespace Dom {
     struct ElementData {
         std::string tag_name;
         AttrMap attributes;
+
+        std::optional<std::string> id();
+        std::unordered_set<std::string> classes();
     };
 
 
     class Node {
     public:
         explicit Node(std::string text);
-
         Node(std::string name, AttrMap attr_map, std::vector<node_ptr> children);
 
         Node_T type() const;
-
         std::string element_tag_name() const;
-
         AttrMap element_attributes() const;
-
         const std::vector<node_ptr>& get_children() const;
 
         void show(int level) const;
-
         void show(int level, std::ostringstream& s) const;
 
     private:

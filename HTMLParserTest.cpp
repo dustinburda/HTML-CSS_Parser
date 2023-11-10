@@ -91,7 +91,7 @@ TEST(HTMLParser, ParseTextAndParseNode_Text) {
     std::cout << s2.str();
 }
 
-TEST(HTMLPArser, ParseElementAndParseNode_Element) {
+TEST(HTMLParser, ParseElementAndParseNode_Element) {
     std::string html_src1 = "<h1 class=\"Hello\" id=\"World\"></h1>";
     HTMLParser p1 { html_src1 };
 

@@ -6,6 +6,28 @@
 
 using namespace Dom;
 
+std::optional<std::string> ElementData::id() {
+    if(attributes.count("id") > 0) {
+        return attributes["id"];
+    }
+    return std::nullopt;
+}
+
+std::unordered_set<std::string> ElementData::classes() {
+    std::unordered_set<std::string> class_attr;
+
+    if(attributes.count("class") > 0) {
+        std::stringstream s {attributes["class"]};
+
+        std::string temp;
+        while(getline(s, temp, ' ')) {
+            class_attr.insert(temp);
+        }
+    }
+
+    return class_attr;
+}
+
 Node::Node(std::string text) :children{}, node_type {Node_T::Text} {
     node_data = std::move(text);
 }

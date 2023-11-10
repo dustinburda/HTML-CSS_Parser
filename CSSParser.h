@@ -61,7 +61,7 @@ public:
     }
 
     std::vector<Rule> parse_rules() {
-        std::vector<Rule> rules;
+        Stylesheet rules;
 
         while(true) {
             advance_whitespace();
@@ -149,14 +149,14 @@ public:
         advance_whitespace();
 
         if(std::isdigit(peek().value())) {
-            declaration.value_ = parse_length();
-            declaration.value_type_ = Value::Length;
+            declaration.var_value_ = parse_length();
+            declaration.value_type_ = Value_Type::Length;
         } else if(peek().value() == '#') {
-            declaration.value_ = parse_color();
-            declaration.value_type_ = Value::ColorValue;
+            declaration.var_value_ = parse_color();
+            declaration.value_type_ = Value_Type::ColorValue;
         } else {
-            declaration.value_ = parse_identifier();
-            declaration.value_type_ = Value::Keyword;
+            declaration.var_value_ = parse_identifier();
+            declaration.value_type_ = Value_Type::Keyword;
         }
 
         advance_whitespace();
@@ -172,7 +172,7 @@ public:
             return (c >= 0 && c <= 9) || (c == '.');
         };
         auto length_str = advance_while(num_or_dot);
-        float length = std::stoi(length_str);
+        float length = std::stof(length_str);
 
         auto unit_type = parse_identifier(); // 'px'
         if(unit_type != "px")
@@ -189,14 +189,12 @@ public:
         auto g = std::stoi(advance(2).value());
         auto b = std::stoi(advance(2).value());
 
-        return Color {static_cast<uint8_t>(r), static_cast<uint8_t>(r), static_cast<uint8_t>(r), 255};
+        return Color {static_cast<uint8_t>(r), static_cast<uint8_t>(g), static_cast<uint8_t>(b), 255};
     }
 
 private:
     std::string source_;
     size_t pos_;
 };
-
-
 
 #endif //BROWSERENGINEINTERNALS_CSSPARSER_H
