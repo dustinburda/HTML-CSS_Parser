@@ -61,7 +61,7 @@ public:
         return source_[pos_];
     }
 
-    std::vector<Rule> parse_rules() {
+    std::vector<Rule> parse() {
         Stylesheet rules;
 
         while(true) {
@@ -89,7 +89,7 @@ public:
             ret.emplace_back(parse_selector());
             advance_whitespace();
             if(peek() == ',') {
-                advance();
+                advance(); // ','
                 advance_whitespace();
             } else if (peek() == '{') {
                 break;
