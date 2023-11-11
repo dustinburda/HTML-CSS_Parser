@@ -7,9 +7,10 @@
 
 #include "CSS.h"
 
-std::function<bool(char)> valid_identifier = [](char c) {
+static std::function<bool(char)> valid_identifier = [](char c) {
     return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9') || (c == '-') || (c == '_');
 };
+
 
 class CSSParser {
 public:
@@ -167,13 +168,12 @@ public:
         return declaration;
     }
 
-    std::tuple<float, Unit> parse_length() {
-
+    std::tuple<int, Unit> parse_length() {
         std::function<bool(char)> num_or_dot = [](char c) {
-            return (c >= 0 && c <= 9) || (c == '.');
-        }; // It actually is a float
+            return (c >= '0' && c <= '9') || (c == '.');
+        };
         auto length_str = advance_while(num_or_dot);
-        float length = std::stof(length_str);
+        float length = std::stoi(length_str);
 
         auto unit_type = parse_identifier(); // 'px'
         if(unit_type != "px")
